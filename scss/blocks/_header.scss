@@ -1,0 +1,185 @@
+.site-body {
+    background-color: #EDF3F8;
+    background-image: url("../images/around-bg.svg");
+    background-repeat: no-repeat;
+    background-size: 780px 780px;
+    background-position: calc(50% - 0px) calc(50% - 532px);
+}
+.logo {
+    width: 135px;
+    height: 38px;
+} 
+.site-header {
+    padding: 40px 0 32px 0;
+}
+.site-header__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.site-header__nav {
+    display: none;
+    position: absolute;
+    top: -48px;
+    background-color: #1b262fde;
+    width: 90%;
+    height: 100vh;
+    right: -27px;
+    z-index: 1;
+    padding: 0 24px;
+    animation-name: circle-to-square;
+    animation-duration: 2s;
+    animation-iteration-count: none;
+    animation-direction: 5s;
+    animation-timing-function: ease;
+}
+.site-header__inner--active > .site-header__nav{
+    display: block;
+}
+.site-header__btn {
+    display: block;
+    width: 28px;
+    height: 17px;
+    border: none;
+    background-color: transparent;
+    background-image: url(../images/hamburg.svg);
+}
+@keyframes circle-to-square {
+    0% {
+        width: 100%;
+        transform:translateX(+400px);
+    }
+    50% {
+        width: 90%;
+        transform:translateX(0px);
+    }
+}
+.nav__btn {
+    display: block;
+    margin-left: auto;
+    margin-top: 45px;
+    padding-bottom:45px ;
+    width: 22px;
+    height: 22px;
+    border: none;
+    background-color: transparent;
+    background-image: url("../images/x.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.nav__list{
+    @include list-rest;
+    padding-top: 43px;
+    border-top:1px solid  #fbfcfe2c;
+    text-align: center;
+}
+.nav__item{
+    margin-bottom: 32px;
+}
+.nav__link{
+    text-decoration: none;
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #FBFCFE;
+    opacity: 0.7;
+}
+.nav__wrap{
+    display: flex;
+    justify-content: center;
+}
+.our-link{
+    padding: 15px 36px;
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Public Sans';
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: -0.115385px;
+    color: #FBFCFE;
+    background-color: #BA4270;
+    border-radius: 24px;
+}
+
+@include media-min(600px){
+    .site-body{
+        background-size: 949px 949px;
+        background-position: calc(50% - 0px) calc(50% - 470px);
+    }
+    .container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .site-header{
+        padding: 45px 0px 53px 0px;
+    }
+    .site-header__btn{
+        display: none;
+    }  
+    .site-header__nav{
+        width: auto;
+        padding: 0;
+        display: block;
+        position: static;
+        height: auto;
+        display: flex;
+        align-items: center;
+        background-color: transparent; 
+    }   
+    .nav__btn{
+        display: none;
+    }    
+    .nav__list{
+        @include list-rest;
+        display: flex;
+        border-top: none;
+        padding-top: 0;
+    }   
+    .nav__item{
+        margin-bottom: 0;
+    }    
+    .nav__item:not(:last-child){
+        margin-right: 40px;
+    }    
+    .nav__wrap{
+        display: block;
+    }    
+    .nav__link{
+        font-size: 15px;
+        line-height: 18px;
+        color: #36536B;
+    }   
+    .our-link{
+        padding: 15px 25px;
+        margin-left: 64px;
+    }
+}
+@include media-min(768px){
+    .site-body{
+        background-size: 780px 780px;
+        background-position: calc(50% + 506px) calc(50% - 127px);
+    }
+    .site-header__nav{
+        margin-right: auto;
+        margin-left: 64px;
+    }    
+    .nav__link:hover{
+        color: #141e26;
+    }    
+    .our-link{
+        margin-left: 449px;
+        &:hover{
+            background-color: #DA6D97;
+        }       
+        &:active{
+            background-color: #cf90a8;
+        }       
+        cursor: pointer;
+    }
+}

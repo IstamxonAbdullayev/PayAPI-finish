@@ -1,0 +1,166 @@
+@mixin list-rest {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  @mixin box ($width, $height, $color) {
+    width: $width;
+    height: $height;
+    background-color: $color;
+  }
+  
+  @mixin boxing ($width:400px, $height:300px, $color:red) {
+    width: $width;
+    height: $height;
+    background-color: $color;
+  }
+  
+  @mixin text-ellipses {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  @mixin display-justfiy-alain ($content:flex, $centr:space-between, $middle:center) {
+    display: $content;
+    justify-content: $centr;
+    align-items: $middle;
+  }
+  
+  @mixin media-max ($max-width:1440px) {
+    @media only screen and (max-width:$max-width) {
+      @content;
+    }
+  }
+  
+  @mixin media-min ($min-width:600px) {
+    @media only screen and (min-width:$min-width) {
+      @content;
+    }
+  }
+  
+  // #############################################################
+  @mixin nav-link {
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 700;
+    color: var(--san-juan-blue);
+    opacity: 0.7;
+  }
+  
+  @mixin main-link {
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 700;
+    letter-spacing: -0.115385px;
+    color: #FBFCFE;
+    background-color: #BA4270;
+    box-shadow: 10px 10px 25px -10px #36536b40;
+    border-radius: 24px;
+  
+    &:hover {
+      opacity: 0.7;
+    }
+  
+    &:active {
+      opacity: 0.5;
+    }
+  }
+  
+  @mixin second-link {
+    padding: 16px 25px;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 700;
+    letter-spacing: -0.115385px;
+    color: #FBFCFE;
+    border: 1px solid #FBFCFE;
+    border-radius: 24px;
+  
+    &:hover {
+      color: #1B262F;
+      background-color: #FFFFFF;
+      border: 1px solid #FBFCFE;
+  
+      &:active {
+        opacity: 0.5;
+      }
+    }
+  }
+  
+  @mixin third-link {
+    text-decoration: none;
+    padding: 16px 26px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.115385px;
+    color: var(--san-juan-blue);
+    border: 1px solid var(--san-juan-blue);
+    border-radius: 24px;
+    &:hover{
+      color: #fff;
+      background-color: var(--san-juan-blue);
+      transition: all 0.3s ease;
+    }
+    &:active{
+      opacity: 0.5;
+    }
+  }
+  @mixin mobile-box {
+    width: 100%;
+    max-width: 327px;
+  }
+  @mixin title-style {
+    font-family: "DM Serif Display";
+    font-weight: 400;
+  }
+  @mixin input-text {
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: -0.115385px;
+    color: var(--san-juan-blue);
+    mix-blend-mode: normal;
+  }
+  
+  @mixin main-title {
+    font-family: "DM Serif Display";
+    font-size: 32px;
+    line-height: 36px;
+    text-align: center;
+    letter-spacing: -0.246154px;
+    color: var(--san-juan-blue);
+  }
+  
+  @mixin main-text {
+    font-size: 15px;
+    line-height: 28px;
+    text-align: center;
+    color: var(--light-san-juan-blue);
+  }
+  @mixin sub-title {
+    @include title-style;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.184615px;
+    color: #36536B;
+  }
+  @mixin check {
+    position: absolute;
+    bottom: 9px;
+    left: calc(50% + -74px);
+    width: 15px;
+    height: 11px;
+    background-image: url("../images/check.svg");
+    background-repeat: no-repeat;
+    content: "";
+  }
+  
+  @mixin img-style {
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    display: block;
+    width: 100%;
+  }
